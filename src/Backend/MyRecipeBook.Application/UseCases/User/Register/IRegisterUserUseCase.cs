@@ -4,6 +4,6 @@ using MyRecipeBook.Communication.Responses;
 namespace MyRecipeBook.Application.UseCases.User.Register;
 public interface IRegisterUserUseCase
 {
-	public Task<ResponseRegisteredUserJson> Execute(RequestedRegisterUserJson request);
+	public Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request);
 }
 

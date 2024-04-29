@@ -13,7 +13,7 @@ namespace MyRecipeBook.API.Controllers
 		[ProducesResponseType(typeof(ResponseRegisteredUserJson), StatusCodes.Status201Created)]
 		public async Task<IActionResult> Register(
 			[FromServices] IRegisterUserUseCase useCase,
-			[FromBody] RequestedRegisterUserJson request)
+			[FromBody] RequestRegisterUserJson request)
 		{
 			var result = await useCase.Execute(request);
 

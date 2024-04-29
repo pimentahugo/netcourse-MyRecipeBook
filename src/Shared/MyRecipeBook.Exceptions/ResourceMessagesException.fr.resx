@@ -129,7 +129,7 @@
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>Le nom ne puet pas être vide.</value>
   </data>
-  <data name="PASSWORD_EMPTY" xml:space="preserve">
+  <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>PASSWORD_EMPTY</value>
   </data>
   <data name="UNKOWN_ERROR" xml:space="preserve">

@@ -132,16 +132,10 @@
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>Le nom ne puet pas être vide.</value>
   </data>
-  <data name="NO_TOKEN" xml:space="preserve">
-    <value>No token em frances</value>
-  </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>PASSWORD_EMPTY</value>
   </data>
   <data name="UNKOWN_ERROR" xml:space="preserve">
     <value>Error em frnaces</value>
-  </data>
-  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
-    <value>Sem permissão em frances</value>
   </data>
 </root>

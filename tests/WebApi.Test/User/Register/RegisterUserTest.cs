@@ -1,24 +1,25 @@
 ﻿using CommonTestUtilities.Requests;
 using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
 using MyRecipeBook.Exceptions;
 using System.Globalization;
 using System.Net;
+using System.Net.Http.Json;
 using System.Text.Json;
 using WebApi.Test.InlineData;
 
 namespace WebApi.Test.User.Register;
-public class RegisterUserTest : MyRecipeBookClassFixture
+public class RegisterUserTest : IClassFixture<CustomWebApplicationFactory>
 {
-	private readonly string method = "user";
-
-	public RegisterUserTest(CustomWebApplicationFactory factory) : base(factory) {}
+	private readonly HttpClient _httpClient;
+	public RegisterUserTest(CustomWebApplicationFactory factory) => _httpClient = factory.CreateClient();
 
 	[Fact]
 	public async Task Success()
 	{
 		var request = RequestRegisterUserJsonBuilder.Build();
 
-		var response = await DoPost(method, request);
+		var response = await _httpClient.PostAsJsonAsync("User", request);
 
 		response.StatusCode.Should().Be(HttpStatusCode.Created);
 
@@ -27,7 +28,6 @@ public class RegisterUserTest : MyRecipeBookClassFixture
 		var responseData = await JsonDocument.ParseAsync(responseBody); //Passando para JSON
 
 		responseData.RootElement.GetProperty("name").GetString().Should().NotBeNullOrWhiteSpace().And.Be(request.Name); //json sempre retorna propriedade em common case
-		responseData.RootElement.GetProperty("tokens").GetProperty("accessToken").GetString().Should().NotBeNullOrWhiteSpace();
 	}
 
 	[Theory]
@@ -37,7 +37,14 @@ public class RegisterUserTest : MyRecipeBookClassFixture
 		var request = RequestRegisterUserJsonBuilder.Build();
 		request.Name = string.Empty;
 
-		var response = await DoPost(method, request, culture);
+		if(_httpClient.DefaultRequestHeaders.Contains("Accept-Language"))
+		{
+			_httpClient.DefaultRequestHeaders.Remove("Accept-Language");
+		}
+
+		_httpClient.DefaultRequestHeaders.Add("Accept-Language", culture);
+
+		var response = await _httpClient.PostAsJsonAsync("User", request);
 
 		response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 

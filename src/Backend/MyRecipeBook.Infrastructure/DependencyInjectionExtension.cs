@@ -21,6 +21,7 @@ public static class DependencyInjectionExtension
 {
 	public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
 	{
+		AddPasswordEncrypter(services, configuration);
 		AddRepositories(services);
 		AddLoggedUser(services);
 		AddTokens(services, configuration);
@@ -32,7 +33,6 @@ public static class DependencyInjectionExtension
 
 		AddDbContext(services, configuration);
 		AddFluentMigrator(services, configuration);
-		AddPasswordEncrypter(services, configuration);
 
 	}
 

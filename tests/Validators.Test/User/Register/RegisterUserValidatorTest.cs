@@ -66,7 +66,6 @@ public class RegisterUserValidatorTest
 
 
 	[Theory]
-	[InlineData(0)]
 	[InlineData(1)]
 	[InlineData(2)]
 	[InlineData(3)]

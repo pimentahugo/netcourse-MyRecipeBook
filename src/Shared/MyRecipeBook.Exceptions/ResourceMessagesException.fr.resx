@@ -135,6 +135,12 @@
   <data name="NO_TOKEN" xml:space="preserve">
     <value>No token em frances</value>
   </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>Senha informada é diferente da atual em frances</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>The password must not be empty. em frances</value>
+  </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>PASSWORD_EMPTY</value>
   </data>

@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AT_LEAST_ONE_INGREDIENT" xml:space="preserve">
+    <value>Pelo menos 1 ingrediente em ingles</value>
+  </data>
+  <data name="AT_LEAST_ONE_INSTRUCTION" xml:space="preserve">
+    <value>Pelo menos 1 instrucao em ingles</value>
+  </data>
+  <data name="COOKING_TIME_NOT_SUPPORTED" xml:space="preserve">
+    <value>The selected cooking time option is not supported.</value>
+  </data>
+  <data name="DIFFICULTY_LEVEL_NOT_SUPPORTED" xml:space="preserve">
+    <value>The selected difficulty level option is not supported.</value>
+  </data>
+  <data name="DISH_TYPE_NOT_SUPPORTED" xml:space="preserve">
+    <value>opcao dish type selecionada invalida em ingles</value>
+  </data>
   <data name="EMAIL_ALREADY_REGISTRED" xml:space="preserve">
     <value>The email already registred.</value>
   </data>
@@ -129,8 +144,20 @@
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
     <value>The email or password invalid.</value>
   </data>
+  <data name="INGREDIENT_EMPTY" xml:space="preserve">
+    <value>Por favor selecione 1 ingrediente em ingles</value>
+  </data>
+  <data name="INSTRUCTION_EMPTY" xml:space="preserve">
+    <value>The instruction must not be empty</value>
+  </data>
+  <data name="INSTRUCTION_EXCEEDS_LIMIT_CHARACTERS" xml:space="preserve">
+    <value>No máximo 2000 caracteres em ingles</value>
+  </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name must not be empty.</value>
+  </data>
+  <data name="NON_NEGATIVE_INSTRUCTION_STEP" xml:space="preserve">
+    <value>É obrigatório preencher pelo menos 1 step em ingles</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
     <value>No token</value>
@@ -143,6 +170,12 @@
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>The password must be longer than 6 characters.</value>
+  </data>
+  <data name="RECIPE_TITLE_EMPTY" xml:space="preserve">
+    <value>The title must not be empty.</value>
+  </data>
+  <data name="TWO_OR_MORE_INSTRUCTIONS_SAME_ORDER" xml:space="preserve">
+    <value>2 ou mais instrucoes iguais em ingles</value>
   </data>
   <data name="UNKOWN_ERROR" xml:space="preserve">
     <value>Unkown error.</value>

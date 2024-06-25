@@ -174,9 +174,6 @@
   <data name="RECIPE_TITLE_EMPTY" xml:space="preserve">
     <value>O titulo não pode ser vazio. em frnaces</value>
   </data>
-  <data name="RECIPE_TITLE_EMPTY1" xml:space="preserve">
-    <value>The title must not be empty. em frances</value>
-  </data>
   <data name="TWO_OR_MORE_INSTRUCTIONS_SAME_ORDER" xml:space="preserve">
     <value>2 ou mais instrucoes iguais em frances</value>
   </data>

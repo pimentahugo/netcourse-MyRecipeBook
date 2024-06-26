@@ -42,6 +42,9 @@ public class AutoMapping : Profile
         CreateMap<Domain.Entities.User, ResponseUserProfileJson>();
         CreateMap<Domain.Entities.Recipe, ResponseRegisteredRecipeJson>()
             .ForMember(destin => destin.Id, config => config.MapFrom(source => _idEncoder.Encode(source.Id)));
+		CreateMap<Domain.Entities.Recipe, ResponseShortRecipeJson>()
+	        .ForMember(destin => destin.Id, config => config.MapFrom(source => _idEncoder.Encode(source.Id)))
+	        .ForMember(destin => destin.AmountIngredients, config => config.MapFrom(source => source.Ingredients.Count));
 	}
 }
 

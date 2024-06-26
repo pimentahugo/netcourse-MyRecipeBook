@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyRecipeBook.Domain.Repositories;
+using MyRecipeBook.Domain.Repositories.Recipe;
 using MyRecipeBook.Domain.Repositories.User;
 using MyRecipeBook.Domain.Security.Cryptography;
 using MyRecipeBook.Domain.Security.Tokens;
@@ -50,6 +51,8 @@ public static class DependencyInjectionExtension
 		services.AddScoped<IUserReadOnlyRepository, UserRepository>();
 		services.AddScoped<IUserWriteOnlyRepository, UserRepository>();
 		services.AddScoped<IUserUpdateOnlyRepository, UserRepository>();
+		services.AddScoped<IRecipeWriteOnlyRepository, RecipeRepository>();
+		services.AddScoped<IRecipeReadOnlyRepository, RecipeRepository>();
 	}
 
 	private static void AddFluentMigrator(IServiceCollection services, IConfiguration configuration)

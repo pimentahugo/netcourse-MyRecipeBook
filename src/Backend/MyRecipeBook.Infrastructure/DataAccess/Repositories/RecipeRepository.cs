@@ -14,7 +14,7 @@ public class RecipeRepository : IRecipeWriteOnlyRepository, IRecipeReadOnlyRepos
     }
 
     public async Task Add(Recipe recipe) => await _dbContext.Recipes.AddAsync(recipe);
-    public async Task<IList<Domain.Entities.Recipe>> Filter(User user, FilterRecipesDto filters) 
+    public async Task<IList<Recipe>> Filter(User user, FilterRecipesDto filters) 
     {
         var query = _dbContext
             .Recipes
@@ -44,5 +44,15 @@ public class RecipeRepository : IRecipeWriteOnlyRepository, IRecipeReadOnlyRepos
         }
 
 		return await query.ToListAsync();
+    }
+    public async Task<Recipe?> GetById(User user, long recipeId)
+    {
+        return await _dbContext
+            .Recipes
+            .AsNoTracking()
+            .Include(recipe => recipe.Ingredients)
+            .Include(recipe => recipe.Instructions)
+            .Include(recipe => recipe.DishTypes)
+            .FirstOrDefaultAsync(recipe => recipe.Active && recipe.Id == recipeId && recipe.UserId == user.Id);
     }
 }

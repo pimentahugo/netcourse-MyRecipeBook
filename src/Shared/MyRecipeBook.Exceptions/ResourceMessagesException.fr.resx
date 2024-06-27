@@ -171,6 +171,9 @@
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>PASSWORD_EMPTY</value>
   </data>
+  <data name="RECIPE_NOT_FOUND" xml:space="preserve">
+    <value>Receita nao encontrada em frances</value>
+  </data>
   <data name="RECIPE_TITLE_EMPTY" xml:space="preserve">
     <value>O titulo não pode ser vazio. em frnaces</value>
   </data>
